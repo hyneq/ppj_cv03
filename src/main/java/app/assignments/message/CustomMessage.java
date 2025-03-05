@@ -17,6 +17,10 @@
 package app.assignments.message;
 
 
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.stereotype.Component;
+
+@Component
 public class CustomMessage implements Message {
 
     private String sender;
@@ -36,6 +40,7 @@ public class CustomMessage implements Message {
         return sender;
     }
 
+    @Value("A sender")
     public void setSender(String sender) {
         this.sender = sender;
     }
@@ -44,6 +49,7 @@ public class CustomMessage implements Message {
         return recipient;
     }
 
+    @Value("A recipient")
     public void setRecipient(String recipient) {
         this.recipient = recipient;
     }
@@ -52,6 +58,7 @@ public class CustomMessage implements Message {
         return text;
     }
 
+    @Value("Hello world!")
     public void setText(String text) {
         this.text = text;
     }
