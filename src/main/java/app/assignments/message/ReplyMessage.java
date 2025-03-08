@@ -22,10 +22,6 @@ public class ReplyMessage implements Message {
         this.reply = reply;
     }
 
-    public void setReply(String reply) {
-        this.reply = reply;
-    }
-
     public String getSender() {
         return original.getRecipient();
     }
