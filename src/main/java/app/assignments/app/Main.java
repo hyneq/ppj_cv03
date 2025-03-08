@@ -8,14 +8,18 @@ import app.assignments.writer.ListWriter;
 import app.assignments.writer.StdoutWriter;
 import app.assignments.writer.Writer;
 import org.springframework.context.ApplicationContext;
-import org.springframework.context.support.ClassPathXmlApplicationContext;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+import org.springframework.context.annotation.ComponentScan;
+import org.springframework.context.annotation.Configuration;
 
+@Configuration
+@ComponentScan("app.assignments")
 public class Main {
 
     public static void main(String[] args) {
 
 
-        ApplicationContext applicationContext = new ClassPathXmlApplicationContext("/application-context.xml");
+        ApplicationContext applicationContext = new AnnotationConfigApplicationContext(Main.class);
 
         Message ping = (Message) applicationContext.getBean(PingMessage.class);
         Message hello = (Message) applicationContext.getBean(CustomMessage.class);
