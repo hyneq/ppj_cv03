@@ -8,6 +8,7 @@ import org.springframework.stereotype.Component;
 public class ReplyMessage implements Message {
 
     private Message original;
+    @Value("Ping reply")
     private String reply;
 
     public ReplyMessage() {
@@ -23,7 +24,6 @@ public class ReplyMessage implements Message {
         this.original = original;
     }
 
-    @Value("Ping reply")
     public void setReply(String reply) {
         this.reply = reply;
     }
