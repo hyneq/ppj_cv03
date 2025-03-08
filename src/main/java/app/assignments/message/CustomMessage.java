@@ -17,17 +17,10 @@
 package app.assignments.message;
 
 
-import org.springframework.beans.factory.annotation.Value;
-import org.springframework.stereotype.Component;
-
-@Component
 public class CustomMessage implements Message {
 
-    @Value("A sender")
     private String sender;
-    @Value("A recipient")
     private String recipient;
-    @Value("Hello world!")
     private String text;
 
     public CustomMessage() {

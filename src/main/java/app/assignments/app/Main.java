@@ -1,5 +1,6 @@
 package app.assignments.app;
 
+import app.assignments.config.AppConfig;
 import app.assignments.message.CustomMessage;
 import app.assignments.message.Message;
 import app.assignments.message.PingMessage;
@@ -9,17 +10,13 @@ import app.assignments.writer.StdoutWriter;
 import app.assignments.writer.Writer;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
-import org.springframework.context.annotation.ComponentScan;
-import org.springframework.context.annotation.Configuration;
 
-@Configuration
-@ComponentScan("app.assignments")
 public class Main {
 
     public static void main(String[] args) {
 
 
-        ApplicationContext applicationContext = new AnnotationConfigApplicationContext(Main.class);
+        ApplicationContext applicationContext = new AnnotationConfigApplicationContext(AppConfig.class);
 
         Message ping = (Message) applicationContext.getBean(PingMessage.class);
         Message hello = (Message) applicationContext.getBean(CustomMessage.class);
