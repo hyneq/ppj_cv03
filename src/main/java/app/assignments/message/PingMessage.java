@@ -16,6 +16,7 @@
 
 package app.assignments.message;
 
+import jakarta.annotation.PostConstruct;
 
 public class PingMessage implements Message {
 
@@ -29,5 +30,10 @@ public class PingMessage implements Message {
 
     public String getText() {
         return "Ping has empty body";
+    }
+
+    @PostConstruct
+    public void printSelf() {
+        System.out.println("A ping message has been created.");
     }
 }

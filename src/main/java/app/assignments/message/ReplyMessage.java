@@ -1,5 +1,7 @@
 package app.assignments.message;
 
+import jakarta.annotation.PostConstruct;
+
 public class ReplyMessage implements Message {
 
     private Message original;
@@ -23,5 +25,10 @@ public class ReplyMessage implements Message {
 
     public String getText() {
         return "ORIGINAL:\n" + original.getText() + "\nREPLY:\n" + reply;
+    }
+
+    @PostConstruct
+    public void printSelf() {
+        System.out.println("A reply message has been created.\n The original text is: " + original.getText() + "\n The reply is: " + this.reply);
     }
 }
